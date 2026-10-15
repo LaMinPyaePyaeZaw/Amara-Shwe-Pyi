@@ -1069,3 +1069,92 @@ a {
         line-height: 1.85;
     }
 }
+
+```css
+/* =========================================
+   ABOUT US — MOBILE CARD LAYOUT FIX
+========================================= */
+
+@media (max-width: 767.98px) {
+
+    /* Section spacing */
+    section.about-section {
+        padding-top: 45px !important;
+        padding-bottom: 45px !important;
+    }
+
+    section.about-section > .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Keep the two cards in separate rows */
+    section.about-section > .container > .row.g-4 {
+        display: flex;
+        flex-direction: column;
+        gap: 22px !important;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    section.about-section > .container > .row.g-4 > .col-lg-6 {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Individual cards */
+    section.about-section .about-card {
+        display: block;
+        width: 100%;
+        height: auto !important;
+        box-sizing: border-box;
+        padding: 26px 22px;
+        background: #FFFFFF;
+        border: 1px solid #E5E7EB;
+        border-top: 4px solid var(--color-primary);
+        border-radius: 10px;
+        box-shadow: 0 8px 24px rgba(21, 28, 37, 0.08);
+        overflow-wrap: anywhere;
+    }
+
+    /* GSP card variation */
+    section.about-section .about-card.about-card-highlight {
+        background: #F8F8F9;
+        border-top-color: #151C25;
+    }
+
+    /* Card headings */
+    section.about-section .about-card h3 {
+        margin-bottom: 16px;
+        font-size: 23px;
+        line-height: 1.4;
+    }
+
+    /* Card body text */
+    section.about-section .about-card p:not(.about-card-label) {
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    /* Card labels */
+    section.about-section .about-card-label {
+        margin-bottom: 12px;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    /* GSP divisions */
+    section.about-section .about-services-list {
+        padding-left: 0;
+        margin-top: 16px;
+    }
+
+    section.about-section .about-services-list li {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+}
+```
