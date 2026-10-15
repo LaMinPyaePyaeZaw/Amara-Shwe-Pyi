@@ -851,3 +851,221 @@ a {
     }
 }
 
+
+/* =========================================
+   SERVICES DROPDOWN: DESKTOP HOVER
+========================================= */
+
+@media (min-width: 992px) {
+    .site-header .navbar-nav .dropdown {
+        position: relative;
+    }
+
+    .site-header .navbar-nav .dropdown:hover > .dropdown-menu,
+    .site-header .navbar-nav .dropdown:focus-within > .dropdown-menu {
+        display: block !important;
+        margin-top: 0;
+    }
+
+    .site-header .navbar-nav .dropdown > .dropdown-menu {
+        top: 100%;
+    }
+}
+
+
+/* =========================================
+   ABOUT US SECTION
+========================================= */
+
+.about-section {
+    position: relative;
+    background-color: #FFFFFF;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+/* Section Eyebrow */
+
+.section-eyebrow {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--color-primary);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Section Title */
+
+.section-title {
+    margin-bottom: 22px;
+    color: #151C25;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 46px);
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.section-title span {
+    display: block;
+    color: var(--color-primary);
+}
+
+/* Section Description */
+
+.section-description {
+    max-width: 650px;
+    margin-bottom: 0;
+    color: #626B75;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* About Cards */
+
+.about-card {
+    position: relative;
+    height: 100%;
+    padding: 42px 36px;
+    background-color: #FFFFFF;
+    border: 1px solid #E8E9EC;
+    border-top: 4px solid var(--color-primary);
+    border-radius: 6px;
+    box-shadow: 0 12px 35px rgba(21, 28, 37, 0.05);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 42px rgba(21, 28, 37, 0.10);
+}
+
+/* Highlighted GSP Card */
+
+.about-card-highlight {
+    background-color: #F8F8F9;
+    border-top-color: #151C25;
+}
+
+/* Card Label */
+
+.about-card-label {
+    margin-bottom: 16px;
+    color: var(--color-primary);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+/* Card Heading */
+
+.about-card h3 {
+    margin-bottom: 22px;
+    color: #151C25;
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+/* Card Paragraphs */
+
+.about-card p:not(.about-card-label) {
+    margin-bottom: 18px;
+    color: #626B75;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.about-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* GSP Divisions List */
+
+.about-services-list {
+    margin: 22px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.about-services-list li {
+    position: relative;
+    margin-bottom: 13px;
+    padding-left: 28px;
+    color: #151C25;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.about-services-list li::before {
+    content: "✓";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--color-primary);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* =========================================
+   ABOUT US: RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 991.98px) {
+    .about-section {
+        padding: 75px 0;
+    }
+
+    .about-card {
+        padding: 34px 28px;
+    }
+
+    .about-card h3 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .about-section {
+        padding: 60px 0;
+    }
+
+    .section-eyebrow {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .section-description {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .about-card {
+        padding: 28px 22px;
+    }
+
+    .about-card h3 {
+        font-size: 24px;
+    }
+
+    .about-card p:not(.about-card-label) {
+        font-size: 14px;
+        line-height: 1.85;
+    }
+}
