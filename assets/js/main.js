@@ -490,3 +490,34 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+
+/* ========================================
+   CUSTOMERS: VIEW ALL TOGGLE
+======================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const viewAllButton = document.getElementById("viewAllCustomers");
+    const allCustomers = document.getElementById("allCustomers");
+
+    if (!viewAllButton || !allCustomers) return;
+
+    viewAllButton.addEventListener("click", function () {
+        const isHidden = allCustomers.hidden;
+
+        allCustomers.hidden = !isHidden;
+
+        viewAllButton.innerHTML = isHidden
+            ? 'Show Less Customers <i class="bi bi-arrow-up-right"></i>'
+            : 'View All Customers <i class="bi bi-arrow-up-right"></i>';
+
+        viewAllButton.setAttribute("aria-expanded", String(isHidden));
+
+        if (isHidden) {
+            allCustomers.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+        }
+    });
+});

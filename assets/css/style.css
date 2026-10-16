@@ -2032,3 +2032,502 @@ a {
         font-size: 1.4rem;
     }
 }
+
+
+/* ========================================
+   CUSTOMERS SECTION
+======================================== */
+
+.customers-section {
+    position: relative;
+    padding: 100px 0;
+    background: #151C25;
+    color: #F4F2EE;
+    overflow: hidden;
+}
+
+.customers-heading {
+    max-width: 760px;
+    margin-bottom: 48px;
+}
+
+.customers-heading .section-eyebrow {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: #DCA3A8;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+}
+
+.customers-heading h2 {
+    margin: 0 0 18px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.2;
+    color: #F4F2EE;
+}
+
+.customers-heading h2 span {
+    color: #DCA3A8;
+}
+
+.customers-heading p {
+    max-width: 570px;
+    margin: 0;
+    color: rgba(244, 242, 238, 0.72);
+    font-size: 0.98rem;
+    line-height: 1.8;
+}
+
+/* Automatic logo slider */
+
+.customers-marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 24px 0;
+    background: #F4F2EE;
+}
+
+/* Soft edges */
+
+.customers-marquee::before,
+.customers-marquee::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 45px;
+    pointer-events: none;
+}
+
+.customers-marquee::before {
+    left: 0;
+    background: linear-gradient(to right, #F4F2EE, transparent);
+}
+
+.customers-marquee::after {
+    right: 0;
+    background: linear-gradient(to left, #F4F2EE, transparent);
+}
+
+.customers-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: customersSlide 36s linear infinite;
+    will-change: transform;
+}
+
+.customer-logo {
+    flex: 0 0 190px;
+    height: 100px;
+    padding: 12px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.customer-logo img {
+    display: block;
+    max-width: 140px;
+    max-height: 72px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Seamless movement: the second set duplicates the first */
+
+@keyframes customersSlide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause when a visitor hovers over the logos */
+
+.customers-marquee:hover .customers-track {
+    animation-play-state: paused;
+}
+
+/* Bottom row */
+
+.customers-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 30px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(244, 242, 238, 0.14);
+}
+
+.customers-footer > span {
+    color: rgba(244, 242, 238, 0.62);
+    font-size: 0.86rem;
+}
+
+.customers-view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border: none;
+    background: transparent;
+    color: #DCA3A8;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.25s ease;
+}
+
+.customers-view-all:hover {
+    color: #F4F2EE;
+}
+
+.customers-view-all i {
+    transition: transform 0.25s ease;
+}
+
+.customers-view-all:hover i {
+    transform: translate(3px, -3px);
+}
+
+/* Complete customer list */
+
+.customers-all {
+    margin-top: 36px;
+}
+
+.customers-all[hidden] {
+    display: none !important;
+}
+
+.customers-all-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    background: rgba(244, 242, 238, 0.12);
+    border: 1px solid rgba(244, 242, 238, 0.12);
+}
+
+.customer-list-item {
+    min-width: 0;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px 16px;
+    background: #151C25;
+    text-align: center;
+}
+
+.customer-list-item img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 150px;
+    max-height: 70px;
+    object-fit: contain;
+}
+
+.customer-list-item span {
+    color: rgba(244, 242, 238, 0.82);
+    font-size: 0.88rem;
+}
+
+/* Responsive layout */
+
+@media (max-width: 767.98px) {
+    .customers-section {
+        padding: 72px 0;
+    }
+
+    .customers-heading {
+        margin-bottom: 32px;
+    }
+
+    .customer-logo {
+        flex-basis: 150px;
+        height: 85px;
+        padding: 10px 20px;
+    }
+
+    .customer-logo img {
+        max-width: 115px;
+        max-height: 60px;
+    }
+
+    .customers-track {
+        animation-duration: 28s;
+    }
+
+    .customers-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .customers-all-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .customer-list-item {
+        min-height: 125px;
+        padding: 20px 10px;
+    }
+
+    .customer-list-item img {
+        max-width: 120px;
+        max-height: 58px;
+    }
+}
+
+/* Accessibility: respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    .customers-track {
+        animation: none;
+        transform: none;
+    }
+
+    .customers-marquee {
+        overflow-x: auto;
+    }
+}
+
+
+/* ASP Customer Slider - Dark Theme Override */
+
+.customers-marquee {
+    background: #151C25;
+}
+
+.customers-marquee::before {
+    background: linear-gradient(
+        to right,
+        #151C25,
+        transparent
+    );
+}
+
+.customers-marquee::after {
+    background: linear-gradient(
+        to left,
+        #151C25,
+        transparent
+    );
+}
+
+/* ASP Customers - Transparent Logo Slider */
+
+.customers-marquee {
+    background: transparent !important;
+    padding: 24px 0;
+}
+
+.customers-marquee::before,
+.customers-marquee::after {
+    display: none;
+}
+
+.customers-track {
+    background: transparent;
+}
+
+.customer-logo {
+    background: transparent;
+}
+
+/* Keep customer logos clean and proportional */
+
+.customer-logo img {
+    background: transparent;
+    object-fit: contain;
+}
+
+
+/* =========================================
+   ASP CUSTOMERS — NAVY GLASS EFFECT
+========================================= */
+
+.customers-marquee {
+    position: relative;
+    overflow: hidden;
+    padding: 24px 0;
+
+    background: rgba(255, 255, 255, 0.035) !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 12px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.045),
+        0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Soft rose highlight */
+
+.customers-marquee:hover {
+    border-color: rgba(220, 163, 168, 0.28);
+    transition: border-color 0.3s ease;
+}
+
+/* Keep the logo track transparent */
+
+.customers-track,
+.customer-logo,
+.customer-logo img {
+    background: transparent !important;
+}
+
+/* Preserve the automatic animation */
+
+.customers-track {
+    animation: customersSlide 36s linear infinite;
+}
+
+.customers-marquee:hover .customers-track {
+    animation-play-state: paused;
+}
+
+@media (max-width: 767.98px) {
+    .customers-marquee {
+        padding: 16px 0;
+        border-radius: 8px;
+    }
+}
+
+/* =========================================
+   ASP CUSTOMERS — WHITE THEME
+   Matches the About Us section
+========================================= */
+
+/* Main Customers Section */
+.customers-section {
+    background: #FFFFFF !important;
+    color: #151C25;
+}
+
+/* Section Heading */
+.customers-heading .section-eyebrow {
+    color: #B8202E;
+}
+
+.customers-heading h2 {
+    color: #151C25;
+}
+
+.customers-heading h2 span {
+    color: #B8202E;
+}
+
+.customers-heading p {
+    color: #5F6670;
+}
+
+/* Logo Slider — Soft Cream Background */
+.customers-marquee {
+    background: #F7F4EF !important;
+    border: 1px solid rgba(21, 28, 37, 0.08);
+    border-radius: 12px;
+    padding: 24px 0;
+    overflow: hidden;
+
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+
+    box-shadow: 0 8px 24px rgba(21, 28, 37, 0.04);
+}
+
+/* Remove Dark Theme Edge Effects */
+.customers-marquee::before,
+.customers-marquee::after {
+    display: none !important;
+}
+
+/* Keep Logo Track Transparent */
+.customers-track {
+    background: transparent !important;
+    animation: customersSlide 36s linear infinite;
+}
+
+/* Individual Logo Items */
+.customer-logo {
+    background: transparent !important;
+}
+
+.customer-logo img {
+    background: transparent !important;
+    object-fit: contain;
+}
+
+/* Pause Animation on Hover */
+.customers-marquee:hover .customers-track {
+    animation-play-state: paused;
+}
+
+.customers-marquee:hover {
+    border-color: rgba(184, 32, 46, 0.22);
+    transition: border-color 0.3s ease;
+}
+
+/* Footer Text and Divider */
+.customers-footer {
+    border-top-color: rgba(21, 28, 37, 0.12);
+}
+
+.customers-footer > span {
+    color: #737780;
+}
+
+/* View All Customers Button */
+.customers-view-all {
+    color: #B8202E;
+}
+
+.customers-view-all:hover {
+    color: #151C25;
+}
+
+/* Full Customer List */
+.customers-all-grid {
+    background: #E5E1DB;
+    border-color: #E5E1DB;
+}
+
+.customer-list-item {
+    background: #FFFFFF;
+}
+
+.customer-list-item span {
+    color: #252D38;
+}
+
+/* Mobile Responsive */
+@media (max-width: 767.98px) {
+    .customers-marquee {
+        padding: 16px 0;
+        border-radius: 8px;
+    }
+}
+
+/* Respect Reduced Motion Settings */
+@media (prefers-reduced-motion: reduce) {
+    .customers-track {
+        animation: none !important;
+    }
+}
