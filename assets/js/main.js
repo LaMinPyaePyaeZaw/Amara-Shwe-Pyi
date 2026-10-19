@@ -521,3 +521,70 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+/* =========================================
+   ASP CONTACT FORM — FORMSPREE
+========================================= */
+
+(() => {
+    const form = document.getElementById("contactForm");
+
+    // Do nothing if this page has no contact form.
+    if (!form) return;
+
+    const submitButton = document.getElementById("contactSubmitBtn");
+    const statusMessage = document.getElementById("contactFormStatus");
+
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        if (!form.reportValidity()) return;
+
+        // Simple honeypot spam check.
+        const honeypot = form.querySelector('[name="_gotcha"]');
+
+        if (honeypot && honeypot.value.trim() !== "") {
+            form.reset();
+            return;
+        }
+
+        const originalButtonHTML = submitButton.innerHTML;
+
+        submitButton.disabled = true;
+        submitButton.innerHTML = "Sending...";
+
+        statusMessage.textContent = "";
+        statusMessage.className = "contact-form-status";
+
+        try {
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: {
+                    Accept: "application/json"
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error("The form service could not accept the message.");
+            }
+
+            statusMessage.textContent =
+                "Thank you! Your enquiry has been submitted successfully.";
+
+            statusMessage.classList.add("is-success");
+            form.reset();
+
+        } catch (error) {
+            statusMessage.textContent =
+                "Sorry, we couldn't send your enquiry. Please try again or email tko@asp-global.biz directly.";
+
+            statusMessage.classList.add("is-error");
+
+        } finally {
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalButtonHTML;
+        }
+    });
+})();

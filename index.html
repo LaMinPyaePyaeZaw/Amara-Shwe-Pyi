@@ -132,19 +132,19 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#key-account">
+                            <a class="nav-link" href="#services">
                                 Key Account
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#clients">
+                            <a class="nav-link" href="#customers">
                                 Clients
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#mission">
+                            <a class="nav-link" href="#about">
                                 Mission &amp; Vision
                             </a>
                         </li>
@@ -398,6 +398,7 @@
 
                         <button
                             class="service-card active"
+                            id="ior"
                             type="button"
                             data-service="ior"
                             aria-pressed="true"
@@ -424,6 +425,7 @@
 
                         <button
                             class="service-card"
+                            id="customs"
                             type="button"
                             data-service="customs"
                             aria-pressed="false"
@@ -450,6 +452,7 @@
 
                         <button
                             class="service-card"
+                            id="cross-border"
                             type="button"
                             data-service="cross-border"
                             aria-pressed="false"
@@ -476,6 +479,7 @@
 
                         <button
                             class="service-card"
+                            id="license"
                             type="button"
                             data-service="licensing"
                             aria-pressed="false"
@@ -863,6 +867,220 @@
 <!-- End Customers Section -->
 
 
+<!-- =========================
+     CONTACT US SECTION
+========================== -->
+<section class="contact-section" id="contact">
+    <div class="container">
+
+        <div class="contact-heading">
+            <span class="section-eyebrow">GET IN TOUCH</span>
+            <h2>Let's Move Business <span>Forward.</span></h2>
+            <p>
+                Have a trade, customs, or logistics enquiry?
+                Contact our team and we will get back to you.
+            </p>
+        </div>
+
+        <div class="row g-4 g-lg-5">
+
+            <!-- Contact Information -->
+            <div class="col-lg-5">
+                <div class="contact-info-panel">
+                    <span class="contact-info-label">CONTACT INFORMATION</span>
+                    <h3>We're here to help your business.</h3>
+
+                    <div class="contact-info-item">
+                        <span class="contact-info-icon">
+                            <i class="bi bi-envelope"></i>
+                        </span>
+                        <div>
+                            <span>Email</span>
+                            <a href="mailto:gspkaintern2@gmail.com">
+                                gspkaintern2@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <span class="contact-info-icon">
+                            <i class="bi bi-telephone"></i>
+                        </span>
+                        <div>
+                            <span>Phone</span>
+                            <a href="tel:+959940670770">
+                                +95 9 940 670 770
+                            </a>
+                            <a href="tel:+959950455451">
+                                +95 9 950 455 451
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <span class="contact-info-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </span>
+                        <div>
+                            <span>Office Address</span>
+                            <p>
+                                No. 65, A/B, 4th Floor, Thiri Street,
+                                Thiri Khay Mar Ward, Sanchaung Township,
+                                Yangon Region, 11161, Myanmar.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-bottom">
+                        AMARA SHWE PYI
+                        <span>CONNECTING BUSINESS BEYOND BORDERS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-lg-7">
+                <div class="contact-form-panel">
+                    <h3>Send Us an Enquiry</h3>
+                    <p class="contact-form-intro">
+                        Complete the form below and our team will receive
+                        your message by email.
+                    </p>
+
+                    <form
+                        id="contactForm"
+                        action="https://formspree.io/f/mjygzzlv"
+                        method="POST"
+                    >
+                        <!-- Email subject -->
+                        <input
+                            type="hidden"
+                            name="_subject"
+                            value="New ASP Website Enquiry"
+                        >
+
+                        <!-- Spam honeypot: leave empty -->
+                        <div class="contact-honeypot" aria-hidden="true">
+                            <label for="contactWebsite">
+                                Leave this field empty
+                            </label>
+                            <input
+                                type="text"
+                                name="_gotcha"
+                                id="contactWebsite"
+                                tabindex="-1"
+                                autocomplete="off"
+                            >
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="contactName">Full Name *</label>
+                                <input
+                                    type="text"
+                                    id="contactName"
+                                    name="name"
+                                    placeholder="Your full name"
+                                    autocomplete="name"
+                                    required
+                                    maxlength="100"
+                                >
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="contactEmail">Business Email *</label>
+                                <input
+                                    type="email"
+                                    id="contactEmail"
+                                    name="email"
+                                    placeholder="you@company.com"
+                                    autocomplete="email"
+                                    required
+                                    maxlength="254"
+                                >
+                            </div>
+
+                            <div class="col-12">
+                                <label for="contactCompany">Company Name</label>
+                                <input
+                                    type="text"
+                                    id="contactCompany"
+                                    name="company"
+                                    placeholder="Your company"
+                                    autocomplete="organization"
+                                    maxlength="150"
+                                >
+                            </div>
+
+                            <div class="col-12">
+                                <label for="contactSubject">Enquiry Type *</label>
+                                <select
+                                    id="contactSubject"
+                                    name="enquiry_type"
+                                    required
+                                >
+                                    <option value="" selected disabled>
+                                        Select an enquiry type
+                                    </option>
+                                    <option value="Importer of Record">
+                                        Importer of Record (IOR)
+                                    </option>
+                                    <option value="Customs Clearance">
+                                        Customs Clearance
+                                    </option>
+                                    <option value="Cross-Border Services">
+                                        Cross-Border Services
+                                    </option>
+                                    <option value="Licensing Services">
+                                        Licensing Services
+                                    </option>
+                                    <option value="Other">
+                                        Other Enquiry
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="contactMessage">Your Message *</label>
+                                <textarea
+                                    id="contactMessage"
+                                    name="message"
+                                    rows="5"
+                                    placeholder="How can ASP help your business?"
+                                    required
+                                    minlength="10"
+                                    maxlength="5000"
+                                ></textarea>
+                            </div>
+
+                            <div class="col-12">
+                                <button
+                                    type="submit"
+                                    class="contact-submit-btn"
+                                    id="contactSubmitBtn"
+                                >
+                                    <span>Send Enquiry</span>
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </button>
+
+                                <p
+                                    id="contactFormStatus"
+                                    class="contact-form-status"
+                                    role="status"
+                                    aria-live="polite"
+                                ></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- END CONTACT US SECTION -->
+
+
     </main>
 
 
@@ -870,7 +1088,7 @@
          FOOTER
     ========================== -->
 
-    <footer class="site-footer">
+    <footer class="site-footer" id="contact">
 
         <div class="container">
 
@@ -886,6 +1104,49 @@
 
     <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Navbar behavior: activate service cards and close mobile menu after navigation -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navbar = document.getElementById("mainNavbar");
+            const serviceLinks = document.querySelectorAll(
+                '.dropdown-menu a[href="#ior"], ' +
+                '.dropdown-menu a[href="#customs"], ' +
+                '.dropdown-menu a[href="#cross-border"], ' +
+                '.dropdown-menu a[href="#license"]'
+            );
+
+            serviceLinks.forEach(function (link) {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault();
+
+                    const targetId = link.getAttribute("href").slice(1);
+                    const serviceCard = document.getElementById(targetId);
+                    const servicesSection = document.getElementById("services");
+
+                    if (serviceCard) {
+                        serviceCard.click();
+                    }
+
+                    if (servicesSection) {
+                        servicesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+
+                    if (navbar && navbar.classList.contains("show") && window.bootstrap) {
+                        bootstrap.Collapse.getOrCreateInstance(navbar).hide();
+                    }
+                });
+            });
+
+            document.querySelectorAll('#mainNavbar .nav-link:not(.dropdown-toggle), #mainNavbar .nav-cta a').forEach(function (link) {
+                link.addEventListener("click", function () {
+                    if (navbar && navbar.classList.contains("show") && window.bootstrap) {
+                        bootstrap.Collapse.getOrCreateInstance(navbar).hide();
+                    }
+                });
+            });
+        });
+    </script>
 
     <!-- Custom JavaScript -->
     <script src="assets/js/main.js"></script>
