@@ -3682,3 +3682,250 @@ a {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* Make Emerald Brewery logo slightly bigger */
+.customers-track .customer-logo img[src*="emarald brewery"] {
+    transform: scale(1.7);
+}
+
+.customer-list-item img[src*="emarald brewery"] {
+    transform: scale(1.2);
+}
+
+.customers-track .customer-logo img[src*="wilmar"] {
+    transform: scale(1.5);
+}
+
+.customers-track .customer-logo img[src*="lluvia.png"] {
+    transform: scale(0.8);
+}
+.customers-track .customer-logo img[src*="cocacola.png"] {
+    transform: scale(1.5);
+}
+
+/* Customer logo alignment */
+.customers-track .customer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Keep logos proportional */
+.customers-track .customer-logo img,
+.customer-list-item img {
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Smooth logo carousel */
+.customers-marquee {
+    overflow: hidden;
+}
+
+/* Consistent spacing below the heading */
+.customers-heading {
+    margin-bottom: 32px;
+}
+
+/* Accessible interaction */
+@media (prefers-reduced-motion: reduce) {
+    .customers-track {
+        animation: none !important;
+    }
+}
+
+
+/* Navbar entrance animation */
+@keyframes aspNavFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo appears first */
+.site-header .navbar-brand {
+    animation: aspNavFadeIn 0.65s ease-out both;
+    animation-delay: 0.05s;
+}
+
+/* Navigation links appear one after another */
+.site-header .navbar-nav .nav-item {
+    animation: aspNavFadeIn 0.55s ease-out both;
+}
+
+.site-header .navbar-nav .nav-item:nth-child(1) {
+    animation-delay: 0.12s;
+}
+
+.site-header .navbar-nav .nav-item:nth-child(2) {
+    animation-delay: 0.20s;
+}
+
+.site-header .navbar-nav .nav-item:nth-child(3) {
+    animation-delay: 0.28s;
+}
+
+.site-header .navbar-nav .nav-item:nth-child(4) {
+    animation-delay: 0.36s;
+}
+
+.site-header .navbar-nav .nav-item:nth-child(5) {
+    animation-delay: 0.44s;
+}
+
+/* Call-to-action button appears last */
+.site-header .navbar .btn-brand {
+    animation: aspNavFadeIn 0.6s ease-out both;
+    animation-delay: 0.48s;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .site-header .navbar-brand,
+    .site-header .navbar-nav .nav-item,
+    .site-header .navbar .btn-brand {
+        animation: none !important;
+    }
+}
+
+
+/* Animate the section reached through navbar navigation */
+@keyframes aspSectionArrive {
+    from {
+        opacity: 0.65;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.asp-section-arrive {
+    animation: aspSectionArrive 0.65s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .asp-section-arrive {
+        animation: none !important;
+    }
+}
+
+/* =========================================
+   ASP — PREMIUM BRAND REFINEMENTS
+   Original burgundy, navy and cream palette
+   ========================================= */
+
+/* 1. Refined text and section colors */
+:root {
+    --asp-premium-burgundy: #851522;
+    --asp-premium-red: #B8202E;
+    --asp-premium-navy: #151C25;
+    --asp-premium-cream: #F7F4EF;
+    --asp-premium-rose: #DCA3A8;
+    --asp-premium-border: rgba(21, 28, 37, 0.09);
+    --asp-premium-shadow: 0 12px 32px rgba(21, 28, 37, 0.07);
+    --asp-premium-shadow-hover: 0 18px 42px rgba(21, 28, 37, 0.12);
+}
+
+/* 2. Cleaner text rendering */
+body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+.section-title,
+.services-heading,
+.customs-details-heading,
+.contact-heading {
+    letter-spacing: -0.025em;
+}
+
+/* 3. More refined navigation hover */
+.site-header .nav-link {
+    transition:
+        color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.site-header .nav-link:hover,
+.site-header .nav-link:focus-visible {
+    color: var(--asp-premium-burgundy);
+}
+
+/* 4. Premium buttons */
+.btn-brand,
+.contact-submit-btn {
+    transition:
+        background-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.btn-brand:hover,
+.contact-submit-btn:hover:not(:disabled) {
+    box-shadow: 0 8px 20px rgba(133, 21, 34, 0.18);
+}
+
+/* 5. Subtle card depth */
+.about-card,
+.service-card,
+.customs-detail-card {
+    border-color: var(--asp-premium-border);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.about-card:hover,
+.service-card:hover,
+.customs-detail-card:hover {
+    border-color: rgba(133, 21, 34, 0.20);
+    box-shadow: var(--asp-premium-shadow-hover);
+}
+
+/* 6. Consistent service icon accent */
+.service-icon {
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.service-card:hover .service-icon {
+    color: var(--asp-premium-burgundy);
+}
+
+/* 7. Elegant contact form focus */
+.contact-form-panel input:focus,
+.contact-form-panel textarea:focus,
+.contact-form-panel select:focus {
+    border-color: var(--asp-premium-burgundy);
+    box-shadow: 0 0 0 3px rgba(133, 21, 34, 0.09);
+}
+
+/* 8. Restrained footer link interactions */
+.footer-links a:hover,
+.footer-contact-info a:hover {
+    color: var(--asp-premium-rose);
+}
+
+/* 9. Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .about-card,
+    .service-card,
+    .customs-detail-card,
+    .btn-brand,
+    .contact-submit-btn,
+    .service-icon {
+        transition: none !important;
+    }
+}

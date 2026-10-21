@@ -486,3 +486,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.info("Amara Shwe Pyi initialized.");
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("click", function (event) {
+        const link = event.target.closest('.site-header a[href^="#"]');
+
+        if (!link) return;
+
+        const href = link.getAttribute("href");
+
+        if (!href || href === "#") return;
+
+        const target = document.getElementById(
+            decodeURIComponent(href.slice(1))
+        );
+
+        if (!target) return;
+
+        // Let the browser navigate to the selected section.
+        setTimeout(function () {
+            target.classList.remove("asp-section-arrive");
+
+            // Restart the animation if this section was visited before.
+            void target.offsetWidth;
+
+            target.classList.add("asp-section-arrive");
+        }, 450);
+    });
+});
