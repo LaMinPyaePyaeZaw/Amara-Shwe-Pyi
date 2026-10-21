@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Customs Clearance",
                 description:
                     "Supporting businesses with customs clearance procedures and shipment coordination to facilitate the movement of goods across borders.",
-                image: "assets/images/custom1.jpg",
+                image: "assets/images/custom3.jpg",
                 alt: "Customs clearance support and shipment coordination",
                 benefits: [
                     "Customs documentation support",
