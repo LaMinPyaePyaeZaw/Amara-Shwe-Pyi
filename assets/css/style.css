@@ -3929,3 +3929,42 @@ body {
         transition: none !important;
     }
 }
+
+/* Text-only service detail panels (Importer of Record and Licensing) */
+.service-detail-panel.is-text-only {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) !important;
+}
+
+.service-detail-panel.is-text-only .service-detail-image-wrap {
+    display: none !important;
+}
+
+.service-detail-panel.is-text-only .service-detail-content {
+    width: 100%;
+    min-width: 0;
+    min-height: 450px;
+    padding: clamp(28px, 5vw, 60px);
+    background:
+        radial-gradient(circle at top right, rgba(184, 32, 46, 0.09), transparent 38%),
+        #F4F2EE;
+}
+
+.service-detail-panel.is-text-only .service-detail-content h3 {
+    max-width: 650px;
+    font-size: clamp(30px, 3.5vw, 44px);
+    line-height: 1.2;
+}
+
+.service-detail-panel.is-text-only .service-detail-content > p {
+    max-width: 650px;
+    line-height: 1.9;
+}
+
+@media (max-width: 575.98px) {
+    .service-detail-panel.is-text-only .service-detail-content {
+        min-height: 0;
+        padding: 30px 22px;
+    }
+}
+

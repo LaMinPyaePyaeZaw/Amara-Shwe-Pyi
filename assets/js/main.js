@@ -110,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const panel = servicesSection.querySelector(".service-detail-panel");
 
         const image = servicesSection.querySelector("#serviceDetailImage");
+        const imageWrap = servicesSection.querySelector(".service-detail-image-wrap");
         const imageLabel = servicesSection.querySelector("#serviceImageLabel");
         const imageNumber = servicesSection.querySelector("#serviceImageNumber");
         const eyebrow = servicesSection.querySelector("#serviceEyebrow");
@@ -129,6 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     "Reliable Importer of Record support to help businesses navigate import responsibilities and trade requirements across markets.",
                 image: "assets/images/ior.jpg",
                 alt: "Importer of Record services",
+                showImage: false,
                 benefits: [
                     "Import coordination and support",
                     "Trade documentation assistance",
@@ -177,6 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     "Licensing and regulatory support to help businesses navigate applicable requirements for their trade activities.",
                 image: "assets/images/licensing.jpg",
                 alt: "Licensing and regulatory support services",
+                showImage: false,
                 benefits: [
                     "Licensing process guidance",
                     "Regulatory documentation support",
@@ -188,6 +191,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let activeService = "ior";
         let animationTimer;
+
+        // The initial Importer of Record panel is text-only.
+        if (panel) panel.classList.add("is-text-only");
+        if (imageWrap) imageWrap.style.display = "none";
 
         function showService(serviceKey) {
             const data = serviceData[serviceKey];
@@ -226,6 +233,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             image.src = data.image;
             image.alt = data.alt;
+
+            const textOnly = data.showImage === false;
+            panel.classList.toggle("is-text-only", textOnly);
+            if (imageWrap) imageWrap.style.display = textOnly ? "none" : "";
+
             imageLabel.textContent = data.category;
             imageNumber.textContent = data.number;
             eyebrow.textContent = `${data.number} / ${data.category}`;
